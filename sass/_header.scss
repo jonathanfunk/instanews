@@ -1,0 +1,14 @@
+/* ------ header ------ */
+
+header {
+  @extend %display-flex;
+  height: 90vh;
+  align-items: center;
+  .headWrap {
+    @extend %full-width;
+    padding: 0 4rem;
+  }
+  .logo {
+    margin-bottom: 1rem;
+  }
+}

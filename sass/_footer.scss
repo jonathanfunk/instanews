@@ -1,0 +1,10 @@
+/* ------ footer ------ */
+
+footer {
+  color: $grey;
+  @extend %full-width;
+  height: 10vh;
+  span {
+    text-transform: uppercase;
+  }
+}

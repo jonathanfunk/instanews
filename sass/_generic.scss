@@ -1,0 +1,18 @@
+/* ------ generic ------ */
+
+html {
+  @extend %full-height;
+}
+
+body {
+  @extend %full-height;
+  font: 16px $base-font;
+  background-color: black;
+  color: $white;
+  @extend %text-align-center;
+}
+
+img {
+  @extend %max-full-width;
+  height: auto;
+}
