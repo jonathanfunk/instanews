@@ -46,22 +46,6 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
-header .headWrap, footer {
-  width: 100%; }
-
-img {
-  max-width: 100%; }
-
-html, body {
-  height: 100%; }
-
-header {
-  display: -ms-flexbox;
-  display: flex; }
-
-body {
-  text-align: center; }
-
 /* ------ fonts ------ */
 @font-face {
   font-family: 'Open Sans';
@@ -92,27 +76,82 @@ body {
   font-style: italic; }
 
 /* ------ generic ------ */
+html {
+  height: 100%; }
+
 body {
+  height: 100%;
   font: 16px "Open Sans", sans-serif;
   background-color: black;
-  color: #ffffff; }
+  color: #ffffff;
+  text-align: center; }
 
 img {
-  height: auto; }
+  width: auto;
+  height: 100%; }
+
+.container {
+  max-width: 1600px;
+  margin: 0 auto; }
 
 /* ------ header ------ */
 header {
+  display: -ms-flexbox;
+  display: flex;
   height: 90vh;
   -ms-flex-align: center;
-      align-items: center; }
-  header .headWrap {
-    padding: 0 4rem; }
+      align-items: center;
+  -ms-flex-pack: center;
+      justify-content: center;
+  -ms-flex-direction: column;
+      flex-direction: column; }
+  @media (min-width: 600px) {
+    header {
+      -ms-flex-direction: row;
+          flex-direction: row;
+      text-align: left; } }
+  @media (min-width: 1000px) {
+    header {
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+      padding: 2rem; } }
   header .logo {
+    margin-bottom: 1rem;
+    height: 100%;
+    max-height: 220px;
+    width: auto; }
+  header p {
     margin-bottom: 1rem; }
+
+.articles {
+  display: none; }
+  .articles ul {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap; }
+    .articles ul li {
+      height: 400px;
+      width: 100%;
+      background: url(http://artiholics.com/wp-content/uploads/2013/05/theoatmeal.jpg) no-repeat center;
+      background-size: cover; }
+      @media (min-width: 600px) {
+        .articles ul li {
+          width: 50%; } }
+      @media (min-width: 1000px) {
+        .articles ul li {
+          width: 25%; } }
 
 /* ------ footer ------ */
 footer {
   color: #c2c2c2;
-  height: 10vh; }
+  width: 100%;
+  height: 10vh;
+  -ms-flex-pack: start;
+      justify-content: flex-start; }
   footer span {
     text-transform: uppercase; }
+  @media (min-width: 1000px) {
+    footer {
+      text-align: left;
+      padding: 2rem; } }

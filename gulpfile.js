@@ -6,11 +6,20 @@ var gulp = require('gulp'),
     sass = require('gulp-sass'),
     autoprefixer = require('gulp-autoprefixer'),
     cssnano = require('gulp-cssnano'),
-    eslint = require('gulp-eslint');
+    eslint = require('gulp-eslint'),
+    notify = require('gulp-notify');
+
+    var plumberErrorHandler = {
+      errorHandler: notify.onError({
+        title: 'Gulp',
+        message: 'Error: <%= error.message %>'//Will see a notification if not able to compile Sass file
+      })
+    };
 
     //sass
     gulp.task('sass', function() {
       gulp.src('./sass/style.scss')
+      .pipe(plumber(plumberErrorHandler))
       .pipe(sass())
       .pipe(autoprefixer({
         browsers: ['last 2 versions']
@@ -24,7 +33,6 @@ var gulp = require('gulp'),
     //uglify
     gulp.task('js', function(){//Runs a task that we named default
       gulp.src('./js/*.js')// Files gulp will work with
-      .pipe(plumber())
       .pipe(uglify()) //Minifies
       .pipe(rename({ extname: '.min.js' })) //Changes name to .min.js
       .pipe(gulp.dest('./build/js')) //Takes everything and puts them in build/js?

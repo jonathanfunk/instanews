@@ -2,9 +2,14 @@
 
 footer {
   color: $grey;
-  @extend %full-width;
+  width: 100%;
   height: 10vh;
+  justify-content: flex-start;
   span {
     text-transform: uppercase;
+  }
+  @include desktop {
+    text-align: left;
+    padding: 2rem;
   }
 }

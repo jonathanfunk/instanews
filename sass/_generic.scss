@@ -1,18 +1,23 @@
 /* ------ generic ------ */
 
 html {
-  @extend %full-height;
+  height: 100%;
 }
 
 body {
-  @extend %full-height;
+  height: 100%;
   font: 16px $base-font;
   background-color: black;
   color: $white;
-  @extend %text-align-center;
+  text-align: center;
 }
 
 img {
-  @extend %max-full-width;
-  height: auto;
+  width: auto;
+  height: 100%;
+}
+
+.container {
+  max-width: 1600px;
+  margin: 0 auto;
 }
