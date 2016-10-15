@@ -2,24 +2,30 @@
 
 header {
   display: flex;
+  height: auto;
   height: 90vh;
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  transition: all .5s ease-in;
+  padding: 1rem;
+  box-sizing: border-box;
   @include tablet {
     flex-direction: row;
     text-align: left;
   }
   @include desktop {
     justify-content: flex-start;
-    padding: 2rem;
   }
   .logo {
     margin-bottom: 1rem;
-    height: 100%;
-    max-height: 220px;
-    width: auto;
-
+    @include tablet {
+      margin: 0;
+    }
+    img {
+      height: 220px;
+      transition: all .5s ease-in;
+    }
   }
   p {
     margin-bottom: 1rem;

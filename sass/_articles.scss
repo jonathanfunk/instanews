@@ -1,19 +1,25 @@
 .articles{
-  display: none;
+  height: 0;
+  overflow: hidden;
+  transition: all .5s ease-in;
   ul{
     display: flex;
     flex-wrap: wrap;
     li{
       height: 400px;
       width: 100%;
-      background: url(http://artiholics.com/wp-content/uploads/2013/05/theoatmeal.jpg) no-repeat center;
-      background-size: cover;
+      background-color: grey;
+      border-bottom: 1px solid black;
+      &:nth-child(even){
+        background-color: $grey;
+      }
       @include tablet {
         width: 50%;
       }
       @include desktop {
         width: 25%;
       }
+
     }
   }
 }
