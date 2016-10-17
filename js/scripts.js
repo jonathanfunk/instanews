@@ -1,6 +1,8 @@
 $(document).ready(function(){
 
   $('select').on('change',function(){
+
+    //initial variances
     var $section = $('select').val();
     var $list = $('ul');
     var $loading = $('.loading');
@@ -9,45 +11,48 @@ $(document).ready(function(){
     url += '?' + $.param({
       'api-key': "9e4fe1eccf0e402f8c2bfb960908748e"
     });
-    $('ul, p').empty();
+
+    //reset & load
+    $('ul').empty();
+    $('.error').remove();
     $loading.show();
+
+    //call ajax
     $.ajax({
       url: url,
       method: 'GET',
     })
 
+    //done
     .done(function(data) {
-      var $data = data.results.filter(function(item) {
-        return item.multimedia.length;
-      }).splice(0, 12);
       $loading.hide();
       $('.logo img').css('height','110px');
       $('header').animateAuto('height', 600);
+      var $data = data.results.filter(function(item) {
+        return item.multimedia.length;
+      }).splice(0, 12);
 
+      //each
       $.each($data, function(item, value){
+
+        //variances & markups
         var articleMarkup = '';
         var $link = value.url;
         var $caption = value.abstract;
         var $image = value.multimedia[4].url;
-        articleMarkup += '<li><a href=' + $link + '>';
-        articleMarkup += '<div class="headline" style="background-image: url('+ $image +')">';
-        articleMarkup += '<div class="story"><p>' + $caption + '</p></div>';
-        articleMarkup += '</div></a></li>';
+        articleMarkup += '<li><a href=' + $link + ' target='_blank'>';
+        articleMarkup += '<figure style="background-image: url('+ $image +')">';
+        articleMarkup += '<figcaption><p>' + $caption + '</p></figcaption>';
+        articleMarkup += '</figure></a></li>';
         $list.append(articleMarkup);
         $('ul').css('height','auto');
       });
     })
+
+    //fail
     .fail(function() {
       $loading.hide();
-      $('.articles').append('<p>Error!</p>');
+      $('.articles').append('<p class="error">Error!</p>');
     });
   });
-
-
-
 });
-
-//To be used later
-//$('.headline').on('mouseenter', function(){
-//$('.story').css('height','160px');
-//});

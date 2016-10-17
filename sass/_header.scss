@@ -7,9 +7,9 @@ header {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  transition: all 1s ease-in;
+  transition: $ease-in;
   padding: 1rem;
-  box-sizing: border-box;
+  box-sizing: $border-box;
   @include tablet {
     flex-direction: row;
     text-align: left;
@@ -24,7 +24,7 @@ header {
     }
     img {
       height: 220px;
-      transition: all .5s ease-in;
+      transition: $ease-in;
     }
   }
   p {
