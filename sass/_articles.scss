@@ -1,25 +1,46 @@
+//May need to tidy up this up later
+
 .articles{
-  height: 0;
-  overflow: hidden;
-  transition: all .5s ease-in;
+  height: auto;
   ul{
+    height: 0;
     display: flex;
     flex-wrap: wrap;
+    overflow: hidden;
     li{
       height: 400px;
       width: 100%;
-      background-color: grey;
-      border-bottom: 1px solid black;
-      &:nth-child(even){
-        background-color: $grey;
-      }
       @include tablet {
         width: 50%;
       }
       @include desktop {
         width: 25%;
       }
-
     }
+  }
+  a {
+    text-decoration: none;
+    color: $white;
+  }
+  .headline {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    background-size: cover;
+    .story {
+      padding: 1rem;
+      min-height: 200px;
+      width: 100%;
+      box-sizing: border-box;
+      position: absolute;
+      bottom: 0;
+      background-color: $trans-black;
+      text-align: left;
+    }
+  }
+  .loading {
+    height: 50px;
+    width: auto;
+    display: none;
   }
 }
