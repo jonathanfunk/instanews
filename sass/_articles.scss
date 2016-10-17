@@ -30,14 +30,18 @@ figure {
   figcaption {
     padding: 1rem;
     box-sizing: $border-box;
-    height: 0;
+    height: 150px;
     width: 100%;
     position: absolute;
     bottom: 0;
     background-color: $trans-black;
     text-align: left;
-    opacity: 0;
+    opacity: 1;
     transition: $ease-in;
+    @include desktop{
+      opacity: 0;
+      height: 0;
+    }
   }
   &:hover figcaption {
     opacity: 1;

@@ -254,14 +254,18 @@ figure {
   figure figcaption {
     padding: 1rem;
     box-sizing: border-box;
-    height: 0;
+    height: 150px;
     width: 100%;
     position: absolute;
     bottom: 0;
     background-color: rgba(0, 0, 0, 0.5);
     text-align: left;
-    opacity: 0;
+    opacity: 1;
     transition: all 0.5s ease-in; }
+    @media (min-width: 1000px) {
+      figure figcaption {
+        opacity: 0;
+        height: 0; } }
   figure:hover figcaption {
     opacity: 1;
     height: 150px; }
