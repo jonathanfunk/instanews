@@ -1,11 +1,15 @@
 $(document).ready(function(){
 
-  $(".choices").on('click', 'option', function(){
-    debugger;
-    alert($(this));
+  //heapbox
+  $('.choices').heapbox({
+    showFirst: false,
+    onChange: searchNYT
+  });
+ function searchNYT(){
+
     //initial variances
-    var $section = $('.heapbox').val();
-    var $list = $('ul');
+    var $section = $('select').val();
+    var $list = $('.grid');
     var $loading = $('.loading');
     var articleMarkup = "";
     var url = 'https://api.nytimes.com/svc/topstories/v2/'+$section+'.json';
@@ -14,9 +18,10 @@ $(document).ready(function(){
     });
 
     //reset & load
-    $('ul').empty();
+    $('.grid').empty();
     $('.error').remove();
     $loading.show();
+    event.preventDefault();
 
     //call ajax
     $.ajax({
@@ -46,7 +51,7 @@ $(document).ready(function(){
         articleMarkup += '<figcaption><p>' + $caption + '</p></figcaption>';
         articleMarkup += '</figure></a></li>';
         $list.append(articleMarkup);
-        $('ul').css('height','auto');
+        $('.grid').css('height','auto');
       });
     })
 
@@ -55,6 +60,7 @@ $(document).ready(function(){
       $loading.hide();
       $('.articles').append('<p class="error">Error!</p>');
     });
-  });
+
+};
 
 });
