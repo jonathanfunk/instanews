@@ -1,9 +1,10 @@
 $(document).ready(function(){
 
-  $('select').on('change',function(){
-
+  $(".choices").on('click', 'option', function(){
+    debugger;
+    alert($(this));
     //initial variances
-    var $section = $('select').val();
+    var $section = $('.heapbox').val();
     var $list = $('ul');
     var $loading = $('.loading');
     var articleMarkup = "";
@@ -40,7 +41,7 @@ $(document).ready(function(){
         var $link = value.url;
         var $caption = value.abstract;
         var $image = value.multimedia[4].url;
-        articleMarkup += '<li><a href=' + $link + ' target='_blank'>';
+        articleMarkup += '<li><a href=' + $link + ' target="_blank">';
         articleMarkup += '<figure style="background-image: url('+ $image +')">';
         articleMarkup += '<figcaption><p>' + $caption + '</p></figcaption>';
         articleMarkup += '</figure></a></li>';
@@ -55,4 +56,5 @@ $(document).ready(function(){
       $('.articles').append('<p class="error">Error!</p>');
     });
   });
+
 });

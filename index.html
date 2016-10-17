@@ -14,7 +14,7 @@
       </div>
       <nav>
         <p>Choose a section:</p>
-        <select class="basic-example">
+        <select class="choices">
           <option value="sections">Sections</option>
         	<option value="home">Home</option>
         	<option value="world">World</option>
@@ -39,6 +39,13 @@
 </body>
 <script type="text/javascript" src="build/js/jquery-3.1.1.min.js"></script>
 <script type="text/javascript" src="plugins/jquery.heapbox-0.9.4.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+
+  $(".choices").heapbox();
+
+});
+</script>
 <script type="text/javascript" src="plugins/height-animate.js"></script>
-<script type="text/javascript" src="build/js/scripts.min.js"></script>
+<script type="text/javascript" src="js/scripts.js"></script>
 </html>
