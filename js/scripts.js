@@ -5,7 +5,7 @@ $(document).ready(function(){
     showFirst: false,
     onChange: searchNYT
   });
- function searchNYT(){
+  function searchNYT(){
 
     //initial variances
     var $section = $('select').val();
@@ -21,7 +21,6 @@ $(document).ready(function(){
     $('.grid').empty();
     $('.error').remove();
     $loading.show();
-    event.preventDefault();
 
     //call ajax
     $.ajax({
@@ -60,7 +59,5 @@ $(document).ready(function(){
       $loading.hide();
       $('.articles').append('<p class="error">Error!</p>');
     });
-
-};
-
+  };
 });
