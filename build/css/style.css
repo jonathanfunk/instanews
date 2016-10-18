@@ -94,6 +94,9 @@ img {
   max-width: 1600px;
   margin: 0 auto; }
 
+h2, h1 {
+  font-size: 0; }
+
 .heapBox {
   clear: both;
   display: inline-block;
@@ -226,6 +229,7 @@ header {
   header p {
     margin-bottom: 1rem; }
 
+/* ------ articles ------ */
 ul {
   height: 0;
   display: -ms-flexbox;
