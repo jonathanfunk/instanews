@@ -1,3 +1,4 @@
+/* ------ variables ------ */
 /* http://meyerweb.com/eric/tools/css/reset/
    v2.0 | 20110126
    License: none (public domain)
@@ -74,7 +75,6 @@ table {
   font-weight: normal;
   font-style: italic; }
 
-/* ------ variables ------ */
 /* ------ generic ------ */
 html {
   height: 100%; }
@@ -83,8 +83,7 @@ body {
   height: 100%;
   font: normal 16px "Open_Sans", sans-serif;
   background-color: black;
-  color: #ffffff;
-  text-align: center; }
+  color: #ffffff; }
 
 img {
   width: auto;
@@ -212,8 +211,7 @@ header {
   @media (min-width: 600px) {
     header {
       -ms-flex-direction: row;
-          flex-direction: row;
-      text-align: left; } }
+          flex-direction: row; } }
   @media (min-width: 1000px) {
     header {
       -ms-flex-pack: start;
@@ -227,7 +225,11 @@ header {
       height: 220px;
       transition: all 0.5s ease-in; }
   header p {
-    margin-bottom: 1rem; }
+    margin-bottom: 1rem;
+    text-align: center; }
+    @media (min-width: 600px) {
+      header p {
+        text-align: left; } }
 
 /* ------ articles ------ */
 ul {
@@ -285,7 +287,8 @@ footer {
   height: 10vh;
   box-sizing: border-box;
   -ms-flex-pack: start;
-      justify-content: flex-start; }
+      justify-content: flex-start;
+  text-align: center; }
   footer span {
     text-transform: uppercase; }
   @media (min-width: 1000px) {

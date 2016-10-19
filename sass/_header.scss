@@ -12,7 +12,6 @@ header {
   box-sizing: $border-box;
   @include tablet {
     flex-direction: row;
-    text-align: left;
   }
   @include desktop {
     justify-content: flex-start;
@@ -29,5 +28,9 @@ header {
   }
   p {
     margin-bottom: 1rem;
+    text-align: center;
+    @include tablet {
+      text-align: left;
+    }
   }
 }
