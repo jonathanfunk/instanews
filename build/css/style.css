@@ -278,7 +278,8 @@ figure {
 
 .loading {
   height: 50px;
-  display: none; }
+  display: none;
+  text-align: center; }
 
 /* ------ footer ------ */
 footer {
