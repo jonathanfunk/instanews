@@ -1,4 +1,4 @@
-$(document).ready(function(){
+$(function(){
 
   //heapbox
   $('.choices').heapbox({
@@ -7,12 +7,12 @@ $(document).ready(function(){
   });
   function searchNYT(){
 
-    //initial variances
-    var $section = $('select').val();
-    var $list = $('.grid');
-    var $loading = $('.loading');
-    var articleMarkup = "";
-    var url = 'https://api.nytimes.com/svc/topstories/v2/'+$section+'.json';
+    //initial letiances
+    let $section = $('select').val();
+    let $list = $('.grid');
+    let $loading = $('.loading');
+    let articleMarkup = "";
+    let url = 'https://api.nytimes.com/svc/topstories/v2/'+$section+'.json';
     url += '?' + $.param({
       'api-key': "9e4fe1eccf0e402f8c2bfb960908748e"
     });
@@ -29,22 +29,22 @@ $(document).ready(function(){
     })
 
     //done
-    .done(function(data) {
+    .done((data)=> {
       $loading.hide();
       $('.logo img').css('height','110px');
       $('header').animateAuto('height', 600);
-      var $data = data.results.filter(function(item) {
+      let $data = data.results.filter((item)=> {
         return item.multimedia.length;
       }).splice(0, 12);
 
       //each
       $.each($data, function(item, value){
 
-        //variances & markups
-        var articleMarkup = '';
-        var $link = value.url;
-        var $caption = value.abstract;
-        var $image = value.multimedia[4].url;
+        //letiances & markups
+        let articleMarkup = '';
+        let $link = value.url;
+        let $caption = value.abstract;
+        let $image = value.multimedia[4].url;
         articleMarkup += '<li><a href=' + $link + ' target="_blank">';
         articleMarkup += '<figure style="background-image: url('+ $image +')">';
         articleMarkup += '<figcaption><p>' + $caption + '</p></figcaption>';
@@ -55,7 +55,7 @@ $(document).ready(function(){
     })
 
     //fail
-    .fail(function() {
+    .fail(()=> {
       $loading.hide();
       $('.articles').append('<p class="error">Error!</p>');
     });
