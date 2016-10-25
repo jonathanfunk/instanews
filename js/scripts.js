@@ -45,10 +45,10 @@ $(function(){
         let $link = value.url;
         let $caption = value.abstract;
         let $image = value.multimedia[4].url;
-        articleMarkup += '<li><a href=' + $link + ' target="_blank">';
-        articleMarkup += '<figure style="background-image: url('+ $image +')">';
-        articleMarkup += '<figcaption><p>' + $caption + '</p></figcaption>';
-        articleMarkup += '</figure></a></li>';
+        articleMarkup += `<li><a href=${$link} target="_blank">`;
+        articleMarkup += `<figure style="background-image: url(${$image})">`;
+        articleMarkup += `<figcaption><p>${$caption}</p></figcaption>`;
+        articleMarkup += `</figure></a></li>`;
         $list.append(articleMarkup);
         $('.grid').css('height','auto');
       });
