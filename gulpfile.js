@@ -7,7 +7,8 @@ var gulp = require('gulp'),
     autoprefixer = require('gulp-autoprefixer'),
     cssnano = require('gulp-cssnano'),
     eslint = require('gulp-eslint'),
-    notify = require('gulp-notify');
+    notify = require('gulp-notify'),
+    babel = require('gulp-babel');
 
     var plumberErrorHandler = {
       errorHandler: notify.onError({
@@ -33,6 +34,7 @@ var gulp = require('gulp'),
     //uglify
     gulp.task('js', function(){//Runs a task that we named default
       gulp.src('./js/*.js')// Files gulp will work with
+      .pipe(babel())
       .pipe(uglify()) //Minifies
       .pipe(rename({ extname: '.min.js' })) //Changes name to .min.js
       .pipe(gulp.dest('./build/js')) //Takes everything and puts them in build/js?

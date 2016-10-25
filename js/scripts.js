@@ -12,7 +12,7 @@ $(function(){
     let $list = $('.grid');
     let $loading = $('.loading');
     let articleMarkup = "";
-    let url = 'https://api.nytimes.com/svc/topstories/v2/'+$section+'.json';
+    let url = 'https://api.nytimes.com/svc/topstories/v2/' + $section + '.json';
     url += '?' + $.param({
       'api-key': "9e4fe1eccf0e402f8c2bfb960908748e"
     });
@@ -57,7 +57,7 @@ $(function(){
     //fail
     .fail(()=> {
       $loading.hide();
-      $('.articles').append('<p class="error">Error!</p>');
+      $('.articles').append(`<p class="error">Error!</p>`);
     });
   };
 });

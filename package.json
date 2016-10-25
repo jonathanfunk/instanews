@@ -12,6 +12,7 @@
   "author": "jonathan",
   "license": "ISC",
   "devDependencies": {
+    "babel-preset-es2015": "^6.18.0",
     "browser-sync": "^2.17.3",
     "eslint": "^3.7.1",
     "eslint-config-airbnb": "^12.0.0",
@@ -20,6 +21,7 @@
     "eslint-plugin-react": "^6.4.1",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^3.1.1",
+    "gulp-babel": "^6.1.2",
     "gulp-cssnano": "^2.1.2",
     "gulp-eslint": "^3.0.1",
     "gulp-notify": "^2.2.0",
