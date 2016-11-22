@@ -18,7 +18,9 @@ $(document).ready(function(){
     });
 
     //reset & load
-    $('.grid').empty();
+    $('.logo img').css('height','110px');
+    $('header').animateAuto('height', 200);
+    $('.grid').css('height','0').empty();;
     $('.error').remove();
     $loading.show();
 
@@ -31,8 +33,6 @@ $(document).ready(function(){
     //done
     .done(function(data) {
       $loading.hide();
-      $('.logo img').css('height','110px');
-      $('header').animateAuto('height', 600);
       var $data = data.results.filter(function(item) {
         return item.multimedia.length;
       }).splice(0, 12);
@@ -45,12 +45,12 @@ $(document).ready(function(){
         var $link = value.url;
         var $caption = value.abstract;
         var $image = value.multimedia[4].url;
+        $('.grid').delay(200).animateAuto('height');
         articleMarkup += '<li><a href=' + $link + ' target="_blank">';
         articleMarkup += '<figure style="background-image: url('+ $image +')">';
         articleMarkup += '<figcaption><p>' + $caption + '</p></figcaption>';
         articleMarkup += '</figure></a></li>';
         $list.append(articleMarkup);
-        $('.grid').css('height','auto');
       });
     })
 
