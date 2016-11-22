@@ -20,7 +20,7 @@ $(document).ready(function(){
     //reset & load
     $('.logo img').css('height','110px');
     $('header').animateAuto('height', 200);
-    $('.grid').css('height','0').empty();;
+    $('.grid').css('height','0').empty();
     $('.error').remove();
     $loading.show();
 
