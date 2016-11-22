@@ -45,7 +45,7 @@ $(document).ready(function(){
         var $link = value.url;
         var $caption = value.abstract;
         var $image = value.multimedia[4].url;
-        $('.grid').delay(200).animateAuto('height');
+        $('.grid').animateAuto('height');
         articleMarkup += '<li><a href=' + $link + ' target="_blank">';
         articleMarkup += '<figure style="background-image: url('+ $image +')">';
         articleMarkup += '<figcaption><p>' + $caption + '</p></figcaption>';
