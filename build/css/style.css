@@ -1,4 +1,13 @@
 /* ------ variables ------ */
+.loading {
+  display: none; }
+
+.loading-gif {
+  padding-top: 3rem;
+  height: 20vh;
+  display: none;
+  margin: 0 auto; }
+
 /* http://meyerweb.com/eric/tools/css/reset/
    v2.0 | 20110126
    License: none (public domain)
@@ -49,31 +58,10 @@ table {
 /* ------ fonts ------ */
 @font-face {
   font-family: 'Open Sans';
-  src: url("opensans-bold-webfont.eot");
-  src: url("opensans-bold-webfont.eot?#iefix") format("embedded-opentype"), url("opensans-bold-webfont.woff2") format("woff2"), url("opensans-bold-webfont.woff") format("woff"), url("opensans-bold-webfont.ttf") format("truetype"), url("opensans-bold-webfont.svg#open_sansbold") format("svg");
-  font-weight: bold;
+  src: url("../build/opensans-light-webfont.eot");
+  src: url("../build/opensans-light-webfont.eot?#iefix") format("embedded-opentype"), url("../build/opensans-light-webfont.woff2") format("woff2"), url("../build/opensans-light-webfont.woff") format("woff"), url("../build/opensans-light-webfont.ttf") format("truetype"), url("../build/opensans-light-webfont.svg#open_sanslight") format("svg");
+  font-weight: 300;
   font-style: normal; }
-
-@font-face {
-  font-family: 'Open Sans';
-  src: url("opensans-bolditalic-webfont.eot");
-  src: url("opensans-bolditalic-webfont.eot?#iefix") format("embedded-opentype"), url("opensans-bolditalic-webfont.woff2") format("woff2"), url("opensans-bolditalic-webfont.woff") format("woff"), url("opensans-bolditalic-webfont.ttf") format("truetype"), url("opensans-bolditalic-webfont.svg#open_sansbold_italic") format("svg");
-  font-weight: bold;
-  font-style: italic; }
-
-@font-face {
-  font-family: 'Open Sans';
-  src: url("opensans-light-webfont.eot");
-  src: url("opensans-light-webfont.eot?#iefix") format("embedded-opentype"), url("opensans-light-webfont.woff2") format("woff2"), url("opensans-light-webfont.woff") format("woff"), url("opensans-light-webfont.ttf") format("truetype"), url("opensans-light-webfont.svg#open_sanslight") format("svg");
-  font-weight: normal;
-  font-style: normal; }
-
-@font-face {
-  font-family: 'Open Sans';
-  src: url("opensans-lightitalic-webfont.eot");
-  src: url("opensans-lightitalic-webfont.eot?#iefix") format("embedded-opentype"), url("opensans-lightitalic-webfont.woff2") format("woff2"), url("opensans-lightitalic-webfont.woff") format("woff"), url("opensans-lightitalic-webfont.ttf") format("truetype"), url("opensans-lightitalic-webfont.svg#open_sanslight_italic") format("svg");
-  font-weight: normal;
-  font-style: italic; }
 
 /* ------ generic ------ */
 html {
@@ -275,8 +263,10 @@ figure {
     height: 150px; }
 
 .loading {
-  height: 50px;
-  display: none; }
+  padding-top: 3rem;
+  height: 20vh;
+  display: block;
+  margin: 0 auto; }
 
 /* ------ footer ------ */
 footer {

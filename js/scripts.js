@@ -56,8 +56,9 @@ $(document).ready(function(){
 
     //fail
     .fail(function() {
-      $loading.hide();
+      
       $('.articles').append('<p class="error">Error!</p>');
+      $loading.hide();
     });
   };
 });
