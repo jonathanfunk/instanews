@@ -1,5 +1,6 @@
 Instanews - New York Times
 ======
+![instanews-browser-mockup](https://cloud.githubusercontent.com/assets/20465505/20635116/a4495aaa-b30d-11e6-8979-ae33562f1945.jpg)
 
 ## Project
 This website is a single page news site that allows users to filter top news stories. The objective for this project is to extract news articles from New York Times and arrange them into a grid.
